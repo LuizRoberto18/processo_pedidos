@@ -19,10 +19,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: tema.copyWith(
-          colorScheme: tema.colorScheme.copyWith(
-        primary: Colors.deepPurpleAccent,
-      )),
-      home: HomePage(),
+        colorScheme: tema.colorScheme.copyWith(
+          primary: Colors.deepPurple,
+        ),
+        inputDecorationTheme: tema.inputDecorationTheme.copyWith(
+          fillColor: Colors.white,
+        ),
+      ),
+      home: ListaEntregas(),
     );
   }
 }

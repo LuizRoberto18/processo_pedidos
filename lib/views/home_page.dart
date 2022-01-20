@@ -35,56 +35,117 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        ListView(
-          children: [
-            SizedBox(
-              child: Image.asset(
-                "images/logo_home.png",
-                height: 200,
-                width: 200,
-              ),
-              // child: Image.asset("images/logo-aviao.png", height: 200, width: 200,),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            TextForm(
-              "login",
-              "Digite um login",
-              controller: _controlLogin,
-              validator: _validadeLogin,
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            TextForm(
-              "Senha",
-              "Digite ua Senha",
-              controller: _controlSenha,
-              validator: _validadesSenha,
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Container(
-              height: 46,
-              width: 240,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  _onClickLogin();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ListaEntregas()));
-                },
-                child: Text(
-                  "Confirmar",
-                  style: TextStyle(fontSize: 20),
+        Center(
+          child: Padding(
+            padding: EdgeInsets.only(top: 25.0, left: 20, right: 20),
+            child: ListView(
+              children: [
+                SizedBox(
+                  child: Image.asset(
+                    "images/logo_home.png",
+                    height: 200,
+                    width: 200,
+                  ),
+                  // child: Image.asset("images/logo-aviao.png", height: 200, width: 200,),
                 ),
-              ),
+                SizedBox(
+                  height: 25,
+                ),
+                TextForm(
+                  "login",
+                  "Digite um login",
+                  controller: _controlLogin,
+                  validator: _validadeLogin,
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                TextForm(
+                  "Senha",
+                  "Digite ua Senha",
+                  controller: _controlSenha,
+                  validator: _validadesSenha,
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Container(
+                  height: 50,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _onClickLogin();
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ListaEntregas()));
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          stops: [0.2, 1],
+                          colors: [
+                            Color(0xFF2E0078),
+                            Color(0xff6c1bf1),
+                          ],
+                        ),
+                      ),
+                      child: Text("Login", style: TextStyle(fontSize: 25),),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  height: 60,
+                  alignment: Alignment.centerLeft,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                  ),
+                  child: SizedBox.expand(
+                    child: ElevatedButton(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            "Login com Google",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
+                          Container(
+                            child: SizedBox(
+                              child: Image.asset("images/icone_google.png"),
+                              height: 30,
+                              width: 30,
+                            ),
+                          ),
+                        ],
+                      ),
+                      onPressed: () => {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+
+                          ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ],
     );

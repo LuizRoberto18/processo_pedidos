@@ -23,6 +23,7 @@ class TextForm extends StatelessWidget {
     this.focusNode,
     this.nextFocus,
   });
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -38,6 +39,7 @@ class TextForm extends StatelessWidget {
         fontSize: 24,
       ),
       decoration: InputDecoration(
+
         label: Text(label),
         labelStyle: TextStyle(
           fontSize: 25,
@@ -51,7 +53,8 @@ class TextForm extends StatelessWidget {
         ),
         hintText: hint,
         hintStyle: TextStyle(
-          fontSize: 18,
+          fontSize: 22,
+          color: Colors.white30,
         ),
       ),
     );
