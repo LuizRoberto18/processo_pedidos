@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:processos_pedidos/views/lista_entregas.dart';
 import 'package:processos_pedidos/wdgets/TextFormField.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,68 +18,75 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Tracking"),
-        centerTitle: true,
-      ),
       body: _body(),
     );
   }
 
   _body() {
-    return Center(
-      child: Padding(
-        padding: EdgeInsets.only(top: 30, left: 25, right: 25),
-        child: Container(
-          child: Column(
-            children: [
-              Container(
-                child: FlutterLogo(
-                  size: 100,
-                ),
-                // child: Image.asset("images/logo-aviao.png", height: 200, width: 200,),
+    return Stack(
+      children: [
+        SizedBox.expand(
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("images/background_home.png"),
+                fit: BoxFit.fill,
               ),
-              SizedBox(
-                height: 20,
-              ),
-              TextForm(
-                "login",
-                "Digite um login",
-                controller: _controlLogin,
-                validator: _validadeLogin,
-              ),
-              SizedBox(
-                height: 25,
-              ),
-              TextForm(
-                "Senha",
-                "Digite ua Senha",
-                controller: _controlSenha,
-                validator: _validadesSenha,
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Container(
-                height: 46,
-                width: 240,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: ElevatedButton(
-                  onPressed: () {
-                    _onClickLogin();
-                  },
-                  child: Text(
-                    "Confirmar",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
         ),
-      ),
+        ListView(
+          children: [
+            SizedBox(
+              child: Image.asset(
+                "images/logo_home.png",
+                height: 200,
+                width: 200,
+              ),
+              // child: Image.asset("images/logo-aviao.png", height: 200, width: 200,),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TextForm(
+              "login",
+              "Digite um login",
+              controller: _controlLogin,
+              validator: _validadeLogin,
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            TextForm(
+              "Senha",
+              "Digite ua Senha",
+              controller: _controlSenha,
+              validator: _validadesSenha,
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              height: 46,
+              width: 240,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  _onClickLogin();
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ListaEntregas()));
+                },
+                child: Text(
+                  "Confirmar",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 

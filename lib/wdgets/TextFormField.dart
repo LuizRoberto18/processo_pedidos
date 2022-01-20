@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class TextForm extends StatelessWidget{
+class TextForm extends StatelessWidget {
   String label;
   String hint;
   bool password;
@@ -13,16 +13,16 @@ class TextForm extends StatelessWidget{
   FocusNode? nextFocus;
 
   TextForm(
-      this.label,
-      this.hint, {
-        this.password = false,
-        this.controller,
-        this.validator,
-        this.KeyboardType,
-        this.textInputAction,
-        this.focusNode,
-        this.nextFocus,
-      });
+    this.label,
+    this.hint, {
+    this.password = false,
+    this.controller,
+    this.validator,
+    this.KeyboardType,
+    this.textInputAction,
+    this.focusNode,
+    this.nextFocus,
+  });
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -33,19 +33,21 @@ class TextForm extends StatelessWidget{
       keyboardAppearance: Brightness.dark,
       textInputAction: textInputAction,
       focusNode: focusNode,
-
       style: TextStyle(
-        color: Colors.blue,
+        color: Colors.purple,
         fontSize: 24,
       ),
       decoration: InputDecoration(
         label: Text(label),
         labelStyle: TextStyle(
           fontSize: 25,
-          color: Colors.blueGrey,
+          color: Colors.white60,
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: Colors.white60),
+          borderRadius: BorderRadius.circular(
+            16,
+          ),
         ),
         hintText: hint,
         hintStyle: TextStyle(
@@ -54,5 +56,4 @@ class TextForm extends StatelessWidget{
       ),
     );
   }
-
 }

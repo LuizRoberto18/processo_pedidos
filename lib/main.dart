@@ -10,18 +10,19 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  
   @override
   Widget build(BuildContext context) {
+    //VARIAVEL PARA GUARDAR O TEMA DO APP
+    final ThemeData tema = ThemeData();
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.blue,
-      ),
-      
-      home: ListaEntregas(),
+      theme: tema.copyWith(
+          colorScheme: tema.colorScheme.copyWith(
+        primary: Colors.deepPurpleAccent,
+      )),
+      home: HomePage(),
     );
   }
 }
