@@ -1,41 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:processos_pedidos/products/produto.dart';
+import 'package:processos_pedidos/wdgets/custom_appbar_item.dart';
+import 'package:processos_pedidos/wdgets/scaffold.dart';
 
-class ListaEntregas extends StatelessWidget {
-  const ListaEntregas({Key? key}) : super(key: key);
+class ListaEntregas extends StatefulWidget {
+  @override
+  State<ListaEntregas> createState() => _ListaEntregasState();
+}
+
+class _ListaEntregasState extends State<ListaEntregas> {
+
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Padding(
-          padding: EdgeInsets.only(left: 10, right: 10),
-        ),
-        title: Text("Entregas"),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 25),
-            child: Icon(
-              Icons.youtube_searched_for_sharp,
-              size: 30,
-            ),
-          ),
-        ],
-      ),
-      body: _body(),
-    );
+    //PRECISA RETORNAR O CORPO DA PAGE ATUAL
+    return ScaffoldCorpo();
   }
 
   _body() {
     List<Produto> produtos = [
       Produto(
           nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
     ];
     return Container(
-      color: Colors.black45,
+      color: Colors.black38,
       child: GridView.builder(
         primary: false,
-        padding: EdgeInsets.only(top: 30, left: 15, right: 15),
+        padding: EdgeInsets.only(top: 10, left: 4, right: 4),
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemCount: produtos.length,
@@ -48,53 +41,48 @@ class ListaEntregas extends StatelessWidget {
 
   _itemView(List<Produto> produtos, int index) {
     Produto produto = produtos[index];
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return Center(
       child: Card(
-        borderOnForeground: true,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //envolver todooo card para usar BoxShadow
-            Container(
-              child: _img("images/fone_ouvido.jpg"),
-            ),
-            Container(
-              color: Colors.white,
-              child: ListTile(
+        shadowColor: Colors.black,
+        elevation: 10,
+        color: Colors.blue,
+        child: Expanded(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Stack(
+                children: [
+                  _img("images/fone_ouvido.jpg"),
+                ],
+              ),
+              ListTile(
                 title: Text(
                   "${produto.nome}",
-                  maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 22),
+                  style: TextStyle(fontSize: 17),
                 ),
-                subtitle: Text(
-                  "${produto.valor}",
-                  style: TextStyle(fontSize: 15),
-                ),
+                subtitle: Text("${produto.valor}"),
               ),
-            ),
-            Container(
-
-              color: Colors.blue,
-              child: Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.favorite_border),
+                  TextButton(
+                    child: Text('DETALHES'),
+                    onPressed: () {
+                      /* ... */
+                    },
                   ),
                   SizedBox(
-                    width: 20,
+                    width: 25,
                   ),
-                  TextButton(
+                  IconButton(
+                    icon: Icon(Icons.favorite_border),
                     onPressed: () {},
-                    child: Text("DETALHES"),
                   ),
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
