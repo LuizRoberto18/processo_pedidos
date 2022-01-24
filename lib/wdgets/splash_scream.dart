@@ -1,41 +1,35 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:processos_pedidos/views/home_page.dart';
 import 'package:processos_pedidos/views/lista_entregas.dart';
-//import 'package:splashscreen/splashscreen.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-class SplashScream extends StatelessWidget {
+class SplashScreamTela extends StatefulWidget {
+  @override
+  State<SplashScreamTela> createState() => _SplashScreamTelaState();
+}
+
+class _SplashScreamTelaState extends State<SplashScreamTela> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.black87,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                child: Image.asset(
-                  "images/logo_home.png",
-                  height: 200,
-                  width: 200,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                "Projeto",
-                style: TextStyle(
-                  color: Colors.deepPurple,
-                  fontSize: 49,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+    return Container();
   }
+
+ // Widget _introScream() {
+    // return SplashScreen(
+    //     seconds: 3,
+    //     navigateAfterSeconds: HomePage(),
+    //     title: Text('Projeto entregas',
+    //       style: TextStyle(
+    //           fontWeight: FontWeight.bold,
+    //           fontSize: 20.0
+    //       ),),
+    //     image: Image.asset("images/logo_home.png"),
+    //     backgroundColor: Colors.black87,
+    //     styleTextUnderTheLoader: TextStyle(),
+    //     photoSize: 100.0,
+    //     onClick: ()=>print("Flutter Egypt"),
+    //     loaderColor: Colors.deepPurple
+    // );
+  //}
 }

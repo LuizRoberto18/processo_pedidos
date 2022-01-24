@@ -6,10 +6,13 @@ import 'package:processos_pedidos/wdgets/custom_appbar_item.dart';
 class ScaffoldCorpo extends StatefulWidget {
   @override
   _ScaffoldCorpoState createState() => _ScaffoldCorpoState();
+  // Widget body;
+  // ScaffoldCorpo(this.body);
 }
 
 class _ScaffoldCorpoState extends State<ScaffoldCorpo> {
   int _indexSelecionado = 0;
+
 
   void _tabSelecionada(int index) {
     print(index);

@@ -6,14 +6,12 @@ import 'package:processos_pedidos/views/home_page.dart';
 import 'package:processos_pedidos/wdgets/custom_appbar_item.dart';
 import 'package:processos_pedidos/wdgets/scaffold.dart';
 
-import 'favoritos.dart';
-
-class ListaEntregas extends StatefulWidget {
+class Favorito extends StatefulWidget {
   @override
-  State<ListaEntregas> createState() => _ListaEntregasState();
+  State<Favorito> createState() => _FavoritoState();
 }
 
-class _ListaEntregasState extends State<ListaEntregas> {
+class _FavoritoState extends State<Favorito> {
   int _indexSelecionado = 0;
 
 
@@ -26,7 +24,7 @@ class _ListaEntregasState extends State<ListaEntregas> {
   }
 
   List<Widget> list = [
-   _body(),
+    _body(),
     Carrinho(),
     HomePage(),
     Container(),
@@ -53,12 +51,7 @@ class _ListaEntregasState extends State<ListaEntregas> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Favorito()),
-          );
-        },
+        onPressed: () {},
         child: Icon(Icons.favorite),
         elevation: 2,
       ),
@@ -88,7 +81,7 @@ class _ListaEntregasState extends State<ListaEntregas> {
         primary: false,
         padding: EdgeInsets.only(top: 10, left: 4, right: 4),
         gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemCount: produtos.length,
         itemBuilder: (context, index) {
           return _itemView(produtos, index);

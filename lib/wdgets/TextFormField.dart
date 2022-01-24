@@ -38,6 +38,7 @@ class TextForm extends StatelessWidget {
         color: Colors.purple,
         fontSize: 24,
       ),
+
       decoration: InputDecoration(
 
         label: Text(label),
@@ -46,6 +47,12 @@ class TextForm extends StatelessWidget {
           color: Colors.white60,
         ),
         border: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white60),
+          borderRadius: BorderRadius.circular(
+            16,
+          ),
+        ),
+        enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.white60),
           borderRadius: BorderRadius.circular(
             16,

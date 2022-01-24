@@ -73,30 +73,24 @@ class _HomePageState extends State<HomePage> {
                   height: 50,
                   width: 200,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   child: ElevatedButton(
                     onPressed: () {
                       _onClickLogin();
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ListaEntregas()));
                     },
-                    child: Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          stops: [0.2, 1],
-                          colors: [
-                            Color(0xFF2E0078),
-                            Color(0xff6c1bf1),
-                          ],
+                    child: SizedBox.expand(
+                      child: Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0x3C0C92FF),
+                        ),
+                        child: Text(
+                          "Login",
+                          style: TextStyle(fontSize: 25),
                         ),
                       ),
-                      child: Text("Login", style: TextStyle(fontSize: 25),),
                     ),
                   ),
                 ),
@@ -137,9 +131,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () => {},
                       style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-
-                          ),
+                        primary: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -153,7 +146,8 @@ class _HomePageState extends State<HomePage> {
 
   void _onClickLogin() async {
     if (!_formKey.currentState!.validate()) {
-      return;
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => ListaEntregas()));
     }
     String login = _controlLogin.text;
     String senha = _controlSenha.text;
