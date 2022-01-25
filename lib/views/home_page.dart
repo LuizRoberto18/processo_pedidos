@@ -84,7 +84,6 @@ class _HomePageState extends State<HomePage> {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Color(0x3C0C92FF),
                         ),
                         child: Text(
                           "Login",
@@ -144,7 +143,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _onClickLogin() async {
+  void _onClickLogin()  {
     if (!_formKey.currentState!.validate()) {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => ListaEntregas()));

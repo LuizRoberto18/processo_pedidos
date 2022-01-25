@@ -61,7 +61,7 @@ class _CostumBottomAppBarState extends State<CostumBottomAppBar> {
             child: Icon(
               item.icon,
               color:
-                  _indexSelecionado == index ? Colors.deepPurple : Colors.grey,
+                  _indexSelecionado == index ? Colors.purple[500] : Colors.grey,
             ),
           ),
         ),

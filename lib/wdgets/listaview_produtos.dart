@@ -1,27 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:processos_pedidos/products/produto.dart';
-import 'package:processos_pedidos/views/carrinho.dart';
 import 'package:processos_pedidos/views/detalhes.dart';
-import 'package:processos_pedidos/views/home_page.dart';
-import 'package:processos_pedidos/wdgets/custom_appbar_item.dart';
-import 'package:processos_pedidos/wdgets/scaffold.dart';
 
-class Favorito extends StatefulWidget {
-  @override
-  State<Favorito> createState() => _FavoritoState();
-}
 
-class _FavoritoState extends State<Favorito> {
+class ListViewProdutos extends StatelessWidget {
 
 
   @override
   Widget build(BuildContext context) {
-    //PRECISA RETORNAR O CORPO DA PAGE ATUAL
-    return Scaffold(
-      appBar: AppBar(title: Text("Favoritos"),),
-      body: _body(),
-    );
+    return _body();
   }
+
   _body() {
     List<Produto> produtos = [
       Produto(
@@ -69,20 +58,21 @@ class _FavoritoState extends State<Favorito> {
                 subtitle: Text("${produto.valor}"),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   TextButton(
                     child: Text('DETALHES'),
                     onPressed: () {
-                      print(0);
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Detalhes()));
+
                     },
                   ),
                   SizedBox(
-                    width: 17,
+                    width: 25,
                   ),
-                  ElevatedButton(onPressed: (){}, child: Text("Similar"),),
+                  IconButton(
+                    icon: Icon(Icons.favorite_border),
+                    onPressed: () {},
+                  ),
                 ],
               ),
             ],

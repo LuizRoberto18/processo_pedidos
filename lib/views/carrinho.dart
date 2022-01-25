@@ -8,9 +8,6 @@ class Carrinho extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Meu Carrinhho"),
-      ),
       bottomNavigationBar: Container(
         height: 80,
         color: Colors.white,

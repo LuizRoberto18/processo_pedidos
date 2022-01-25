@@ -5,4 +5,5 @@ class Produto {
   final String? descricao;
 
   Produto({this.nome, this.img, this.valor, this.descricao});
+
 }

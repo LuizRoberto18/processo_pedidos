@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:processos_pedidos/views/ConfigConta.dart';
+import 'package:processos_pedidos/views/carrinho.dart';
+import 'package:processos_pedidos/views/favoritos.dart';
 import 'package:processos_pedidos/views/home_page.dart';
 import 'package:processos_pedidos/views/lista_entregas.dart';
 import 'package:processos_pedidos/wdgets/custom_appbar_item.dart';
+import 'package:processos_pedidos/wdgets/drawer_list.dart';
 
 class ScaffoldCorpo extends StatefulWidget {
   @override
@@ -23,14 +27,10 @@ class _ScaffoldCorpoState extends State<ScaffoldCorpo> {
   }
 
   List<Widget> list = [
-    Container(
-      color: Colors.black,
-      height: 200,
-      width: 200,
-    ),
     ListaEntregas(),
-    HomePage(),
-    Container(),
+    Carrinho(),
+    DrawerList(),
+    ConfigConta(),
   ];
 
   @override
@@ -54,7 +54,10 @@ class _ScaffoldCorpoState extends State<ScaffoldCorpo> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => Favorito()));
+        },
         child: Icon(Icons.favorite),
         elevation: 2,
       ),

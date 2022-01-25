@@ -23,13 +23,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: tema.copyWith(
         colorScheme: tema.colorScheme.copyWith(
-          primary: Colors.deepPurple,
+          primary: Colors.purple[700],
+          secondary: Colors.purple[500],
         ),
         inputDecorationTheme: tema.inputDecorationTheme.copyWith(
           fillColor: Colors.white,
         ),
       ),
-      home: ListaEntregas(),
+      home: ScaffoldCorpo(),
     );
   }
 }
