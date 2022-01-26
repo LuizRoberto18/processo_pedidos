@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:processos_pedidos/views/ConfigConta.dart';
 import 'package:processos_pedidos/views/carrinho.dart';
+import 'package:processos_pedidos/views/dados_usuario.dart';
 import 'package:processos_pedidos/views/favoritos.dart';
 import 'package:processos_pedidos/views/home_page.dart';
 import 'package:processos_pedidos/views/lista_entregas.dart';
@@ -30,7 +31,7 @@ class _ScaffoldCorpoState extends State<ScaffoldCorpo> {
     ListaEntregas(),
     Carrinho(),
     DrawerList(),
-    ConfigConta(),
+    DadosUsuario(),
   ];
 
   @override

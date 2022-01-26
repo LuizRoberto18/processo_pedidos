@@ -36,6 +36,22 @@ class DrawerList extends StatelessWidget {
               ),
             ),
             _listTile(
+                leading: Icons.assignment_late_outlined,
+                trailling: Icons.arrow_forward_sharp,
+                title: "Traking",
+                subtitle: "Passo a passo",
+                onTap: () {
+                  Navigator.pop(context);
+                  print("favoritos");
+                }),
+            Container(
+              color: Colors.black12,
+              child: Divider(
+                height: 2,
+                color: Colors.black,
+              ),
+            ),
+            _listTile(
                 leading: Icons.logout,
                 trailling: Icons.arrow_forward_sharp,
                 title: "Sair",

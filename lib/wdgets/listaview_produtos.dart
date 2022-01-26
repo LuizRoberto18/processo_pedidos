@@ -82,10 +82,4 @@ class ListViewProdutos extends StatelessWidget {
     );
   }
 
-  _img(String img) {
-    return Image.asset(
-      img,
-      fit: BoxFit.cover,
-    );
-  }
 }

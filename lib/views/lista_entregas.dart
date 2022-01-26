@@ -15,7 +15,6 @@ class ListaEntregas extends StatefulWidget {
 }
 
 class _ListaEntregasState extends State<ListaEntregas> {
-
   @override
   Widget build(BuildContext context) {
     //PRECISA RETORNAR O CORPO DA PAGE ATUAL
@@ -26,16 +25,19 @@ class _ListaEntregasState extends State<ListaEntregas> {
     List<Produto> produtos = [
       Produto(
           nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
-      Produto(
-          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
     ];
     return Container(
       color: Colors.black38,
       child: GridView.builder(
         primary: false,
-        padding: EdgeInsets.only(top: 10, left: 4, right: 4),
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        padding: EdgeInsets.only(top: 5, left: 4, right: 4),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, mainAxisExtent: 314),
         itemCount: produtos.length,
         itemBuilder: (context, index) {
           return _itemView(produtos, index);
@@ -48,48 +50,56 @@ class _ListaEntregasState extends State<ListaEntregas> {
     Produto produto = produtos[index];
     return Center(
       child: Card(
+        semanticContainer: true,
         shadowColor: Colors.black,
-        elevation: 10,
-        color: Colors.blue,
-        child: Expanded(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Center(
-                  child: Image.asset(
-                    "${produto.img}",
-                    width: 50,
-                  )),
-              ListTile(
-                title: Text(
-                  "${produto.nome}",
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 17),
-                ),
-                subtitle: Text("${produto.valor}"),
-              ),
-              Row(
+        elevation: 7,
+color: Colors.grey[300],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            SizedBox(
+              width: 50,
+              child: _img("${produto.img}"),
+            ),
+            Container(
+
+
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  TextButton(
-                    child: Text('DETALHES'),
-                    onPressed: () {
-                      print(0);
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Detalhes()));
-                    },
+                children: [
+                  ListTile(
+                    title: Text(
+                      "${produto.nome}",
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 17),
+                    ),
+                    subtitle: Text("${produto.valor}"),
                   ),
-                  SizedBox(
-                    width: 25,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      TextButton(
+                        child: Text('DETALHES'),
+                        onPressed: () {
+                          print(0);
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Detalhes()));
+                        },
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      IconButtonPerson(
+                        onPress: () {},
+                        icone: Icons.favorite_border,
+                      ),
+                    ],
                   ),
-                 IconButtonPerson(
-                   onPress: (){},
-                   icone: Icons.favorite_border,
-                 ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

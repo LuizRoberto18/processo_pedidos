@@ -4,6 +4,7 @@ import 'package:processos_pedidos/views/carrinho.dart';
 import 'package:processos_pedidos/views/detalhes.dart';
 import 'package:processos_pedidos/views/home_page.dart';
 import 'package:processos_pedidos/wdgets/custom_appbar_item.dart';
+import 'package:processos_pedidos/wdgets/icon_button.dart';
 import 'package:processos_pedidos/wdgets/scaffold.dart';
 
 class Favorito extends StatefulWidget {
@@ -12,18 +13,27 @@ class Favorito extends StatefulWidget {
 }
 
 class _FavoritoState extends State<Favorito> {
-
-
   @override
   Widget build(BuildContext context) {
     //PRECISA RETORNAR O CORPO DA PAGE ATUAL
     return Scaffold(
-      appBar: AppBar(title: Text("Favoritos"),),
+      appBar: AppBar(
+        title: Text("Favoritos"),
+      ),
       body: _body(),
     );
   }
+
   _body() {
     List<Produto> produtos = [
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
       Produto(
           nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
       Produto(
@@ -33,9 +43,9 @@ class _FavoritoState extends State<Favorito> {
       color: Colors.black38,
       child: GridView.builder(
         primary: false,
-        padding: EdgeInsets.only(top: 10, left: 4, right: 4),
-        gridDelegate:
-        SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        padding: EdgeInsets.only(top: 5, left: 4, right: 4),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, mainAxisExtent: 314),
         itemCount: produtos.length,
         itemBuilder: (context, index) {
           return _itemView(produtos, index);
@@ -48,45 +58,65 @@ class _FavoritoState extends State<Favorito> {
     Produto produto = produtos[index];
     return Center(
       child: Card(
+        semanticContainer: true,
         shadowColor: Colors.black,
-        elevation: 10,
-        color: Colors.blue,
-        child: Expanded(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Center(
-                  child: Image.asset(
-                    "${produto.img}",
-                    width: 50,
-                  )),
-              ListTile(
-                title: Text(
-                  "${produto.nome}",
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 17),
-                ),
-                subtitle: Text("${produto.valor}"),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  TextButton(
-                    child: Text('DETALHES'),
-                    onPressed: () {
-                      print(0);
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Detalhes()));
-                    },
+        elevation: 7,
+        color: Colors.grey[300],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            SizedBox(
+              width: 50,
+              child: _img("${produto.img}"),
+            ),
+            Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ListTile(
+                    title: Text(
+                      "${produto.nome}",
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 17),
+                    ),
+                    subtitle: Text("${produto.valor}"),
                   ),
-                  SizedBox(
-                    width: 17,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      TextButton(
+                        child: Text(
+                          'DETALHES',
+                          style: TextStyle(fontSize: 13),
+                        ),
+                        onPressed: () {
+                          print(0);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Detalhes()));
+                        },
+                      ),
+                      SizedBox(
+                        width: 9,
+                      ),
+                      Container(
+                          width: 90,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Similar",
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.bold),
+                            ),
+                          )),
+                    ],
                   ),
-                  ElevatedButton(onPressed: (){}, child: Text("Similar"),),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -4,9 +4,11 @@ class IconButtonPerson extends StatelessWidget {
   IconData? icone;
   Function()? onPress;
 
+
   IconButtonPerson({
     this.icone,
     this.onPress,
+
   });
 
   @override
@@ -15,6 +17,7 @@ class IconButtonPerson extends StatelessWidget {
       onPressed: onPress!,
       icon: Icon(icone!),
       color: Colors.purple[500],
+
     );
   }
 }

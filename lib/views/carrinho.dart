@@ -67,13 +67,16 @@ class Carrinho extends StatelessWidget {
           nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
     ];
     return Container(
+
       color: Colors.black,
       child: GridView.builder(
         primary: true,
+
         padding: EdgeInsets.only(top: 10, left: 10, right: 10),
         gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1, mainAxisExtent: 200),
         itemCount: produtos.length,
+
         itemBuilder: (context, index) {
           return _itemView(produtos, index);
         },
@@ -103,16 +106,15 @@ class Carrinho extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
             ),
+            Text("<<<<<<<< Valor do frete >>>>>>>",style: TextStyle(fontWeight: FontWeight.bold),),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 IconButton(
                   onPressed: () {},
                   icon: Icon(Icons.check_box_outline_blank),
                 ),
-                SizedBox(
-                  width: 150,
-                ),
+
                 ElevatedButton(
                   onPressed: () {},
                   child: Text("Comprar"),
