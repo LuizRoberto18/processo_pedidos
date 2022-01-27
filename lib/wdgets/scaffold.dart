@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:processos_pedidos/views/ConfigConta.dart';
-import 'package:processos_pedidos/views/carrinho.dart';
-import 'package:processos_pedidos/views/dados_usuario.dart';
-import 'package:processos_pedidos/views/favoritos.dart';
+import 'package:processos_pedidos/views/Usuario/ConfigConta.dart';
+import 'package:processos_pedidos/views/Compras/carrinho.dart';
+import 'package:processos_pedidos/views/Usuario/dados_usuario.dart';
+import 'package:processos_pedidos/views/Usuario/favoritos.dart';
 import 'package:processos_pedidos/views/home_page.dart';
-import 'package:processos_pedidos/views/lista_entregas.dart';
+import 'package:processos_pedidos/views/Pedidos/lista_entregas.dart';
 import 'package:processos_pedidos/wdgets/custom_appbar_item.dart';
 import 'package:processos_pedidos/wdgets/drawer_list.dart';
 
@@ -18,12 +18,10 @@ class ScaffoldCorpo extends StatefulWidget {
 class _ScaffoldCorpoState extends State<ScaffoldCorpo> {
   int _indexSelecionado = 0;
 
-
   void _tabSelecionada(int index) {
     print(index);
     setState(() {
       _indexSelecionado = index;
-
     });
   }
 
@@ -56,8 +54,8 @@ class _ScaffoldCorpoState extends State<ScaffoldCorpo> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Favorito()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Favorito()));
         },
         child: Icon(Icons.favorite),
         elevation: 2,

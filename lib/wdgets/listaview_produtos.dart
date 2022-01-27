@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:processos_pedidos/products/produto.dart';
-import 'package:processos_pedidos/views/detalhes.dart';
-
+import 'package:processos_pedidos/views/products/produto.dart';
 
 class ListViewProdutos extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return _body();
@@ -24,7 +20,7 @@ class ListViewProdutos extends StatelessWidget {
         primary: false,
         padding: EdgeInsets.only(top: 10, left: 4, right: 4),
         gridDelegate:
-        SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemCount: produtos.length,
         itemBuilder: (context, index) {
           return _itemView(produtos, index);
@@ -46,9 +42,9 @@ class ListViewProdutos extends StatelessWidget {
             children: <Widget>[
               Center(
                   child: Image.asset(
-                    "${produto.img}",
-                    width: 50,
-                  )),
+                "${produto.img}",
+                width: 50,
+              )),
               ListTile(
                 title: Text(
                   "${produto.nome}",
@@ -62,9 +58,7 @@ class ListViewProdutos extends StatelessWidget {
                 children: <Widget>[
                   TextButton(
                     child: Text('DETALHES'),
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                   ),
                   SizedBox(
                     width: 25,
@@ -81,5 +75,4 @@ class ListViewProdutos extends StatelessWidget {
       ),
     );
   }
-
 }

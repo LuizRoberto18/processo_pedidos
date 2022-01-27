@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:processos_pedidos/views/lista_entregas.dart';
+import 'package:processos_pedidos/views/Pedidos/lista_entregas.dart';
 import 'package:processos_pedidos/wdgets/TextFormField.dart';
 
 class HomePage extends StatefulWidget {
@@ -143,7 +143,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _onClickLogin()  {
+  void _onClickLogin() {
     if (!_formKey.currentState!.validate()) {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => ListaEntregas()));

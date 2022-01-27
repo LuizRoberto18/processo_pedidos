@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:processos_pedidos/products/produto.dart';
-import 'package:processos_pedidos/views/lista_entregas.dart';
+
+import 'package:processos_pedidos/views/products/produto.dart';
 import 'package:processos_pedidos/wdgets/icon_button.dart';
 import 'package:processos_pedidos/wdgets/listaview_produtos.dart';
 
-class Detalhes extends StatelessWidget {
-  const Detalhes({Key? key}) : super(key: key);
-
+class DetalhesCompras extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _body();
@@ -57,11 +55,11 @@ class Detalhes extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButtonPerson(
-                          onPress: (){},
+                          onPress: () {},
                           icone: Icons.shopping_cart,
                         ),
                         IconButtonPerson(
-                          onPress: (){},
+                          onPress: () {},
                           icone: Icons.favorite,
                         ),
                         SizedBox(
@@ -78,7 +76,7 @@ class Detalhes extends StatelessWidget {
                           child: Image.asset("images/logo_insta.png"),
                         ),
                         IconButtonPerson(
-                          onPress: (){},
+                          onPress: () {},
                           icone: Icons.more_vert,
                         ),
                       ],
@@ -118,7 +116,6 @@ class Detalhes extends StatelessWidget {
                   height: 10,
                 ),
                 // Container(child: ListViewProdutos()),
-
               ],
             ),
           ),

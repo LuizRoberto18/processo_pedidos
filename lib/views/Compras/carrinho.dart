@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:processos_pedidos/products/produto.dart';
+
+import '../products/produto.dart';
 
 class Carrinho extends StatelessWidget {
   const Carrinho({Key? key}) : super(key: key);
@@ -39,9 +40,7 @@ class Carrinho extends StatelessWidget {
               SizedBox(
                 width: 60,
               ),
-
               ElevatedButton(
-
                 onPressed: () {},
                 child: Text("Continuar"),
               ),
@@ -67,16 +66,13 @@ class Carrinho extends StatelessWidget {
           nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
     ];
     return Container(
-
       color: Colors.black,
       child: GridView.builder(
         primary: true,
-
         padding: EdgeInsets.only(top: 10, left: 10, right: 10),
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1, mainAxisExtent: 200),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 1, mainAxisExtent: 200),
         itemCount: produtos.length,
-
         itemBuilder: (context, index) {
           return _itemView(produtos, index);
         },
@@ -106,15 +102,37 @@ class Carrinho extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            Text("<<<<<<<< Valor do frete >>>>>>>",style: TextStyle(fontWeight: FontWeight.bold),),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  " cor/modelo ",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  " quantidade ",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            Row(
               children: <Widget>[
                 IconButton(
                   onPressed: () {},
                   icon: Icon(Icons.check_box_outline_blank),
                 ),
-
+                Text("selecionar"),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.delete,
+                    color: Colors.red,
+                  ),
+                ),
+                Text("Remover"),
+                SizedBox(
+                  width: 150,
+                ),
                 ElevatedButton(
                   onPressed: () {},
                   child: Text("Comprar"),

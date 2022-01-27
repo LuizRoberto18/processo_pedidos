@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:processos_pedidos/products/produto.dart';
-import 'package:processos_pedidos/views/carrinho.dart';
-import 'package:processos_pedidos/views/detalhes.dart';
+import 'package:processos_pedidos/views/Compras/carrinho.dart';
+import 'package:processos_pedidos/views/Compras/detalhes_compras.dart';
 import 'package:processos_pedidos/views/home_page.dart';
+import 'package:processos_pedidos/views/products/produto.dart';
 import 'package:processos_pedidos/wdgets/custom_appbar_item.dart';
 import 'package:processos_pedidos/wdgets/icon_button.dart';
 import 'package:processos_pedidos/wdgets/scaffold.dart';
 
-class Favorito extends StatefulWidget {
+import '../Usuario/favoritos.dart';
+
+class ListaEntregas extends StatefulWidget {
   @override
-  State<Favorito> createState() => _FavoritoState();
+  State<ListaEntregas> createState() => _ListaEntregasState();
 }
 
-class _FavoritoState extends State<Favorito> {
+class _ListaEntregasState extends State<ListaEntregas> {
   @override
   Widget build(BuildContext context) {
     //PRECISA RETORNAR O CORPO DA PAGE ATUAL
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Favoritos"),
-      ),
-      body: _body(),
-    );
+    return _body();
   }
 
   _body() {
@@ -86,31 +83,22 @@ class _FavoritoState extends State<Favorito> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       TextButton(
-                        child: Text(
-                          'DETALHES',
-                          style: TextStyle(fontSize: 13),
-                        ),
+                        child: Text('DETALHES'),
                         onPressed: () {
                           print(0);
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Detalhes()));
+                                  builder: (context) => DetalhesCompras()));
                         },
                       ),
                       SizedBox(
-                        width: 9,
+                        width: 30,
                       ),
-                      Container(
-                          width: 90,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Text(
-                              "Similar",
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.bold),
-                            ),
-                          )),
+                      IconButtonPerson(
+                        onPress: () {},
+                        icone: Icons.favorite_border,
+                      ),
                     ],
                   ),
                 ],
