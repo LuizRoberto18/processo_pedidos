@@ -9,6 +9,9 @@ class Carrinho extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Carrinho"),
+      ),
       bottomNavigationBar: Container(
         height: 80,
         color: Colors.white,
@@ -66,7 +69,7 @@ class Carrinho extends StatelessWidget {
           nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
     ];
     return Container(
-      color: Colors.black,
+      color: Colors.grey,
       child: GridView.builder(
         primary: true,
         padding: EdgeInsets.only(top: 10, left: 10, right: 10),
@@ -83,7 +86,7 @@ class Carrinho extends StatelessWidget {
   _itemView(List<Produto> produtos, int index) {
     Produto produto = produtos[index];
     return Card(
-      color: Colors.grey[400],
+      color: Colors.grey[200],
       child: Container(
         height: 100,
         padding: EdgeInsets.all(10),
@@ -131,7 +134,7 @@ class Carrinho extends StatelessWidget {
                 ),
                 Text("Remover"),
                 SizedBox(
-                  width: 150,
+                  width: 20,
                 ),
                 ElevatedButton(
                   onPressed: () {},

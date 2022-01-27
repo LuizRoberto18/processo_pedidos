@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:processos_pedidos/views/Compras/carrinho.dart';
 import 'package:processos_pedidos/views/Pedidos/lista_entregues.dart';
+import 'package:processos_pedidos/views/Pedidos/lista_solicitados.dart';
 import 'package:processos_pedidos/views/home_page.dart';
 import 'package:processos_pedidos/views/Pedidos/lista_entregas.dart';
+import 'package:processos_pedidos/views/products/lista_produtos.dart';
 import 'package:processos_pedidos/wdgets/scaffold.dart';
 import 'package:processos_pedidos/wdgets/splash_scream.dart';
 
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
           fillColor: Colors.white,
         ),
       ),
-      home: ListaEntregas(),
+      home: ScaffoldCorpo(),
     );
   }
 }

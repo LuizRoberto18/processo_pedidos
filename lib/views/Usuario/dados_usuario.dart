@@ -1,7 +1,8 @@
-import 'dart:js';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:processos_pedidos/views/Pedidos/detalhes_entrega.dart';
+import 'package:processos_pedidos/views/Pedidos/detalhes_pedidos.dart';
+import 'package:processos_pedidos/views/Pedidos/lista_entregas.dart';
+import 'package:processos_pedidos/views/Pedidos/lista_entregues.dart';
 import 'package:processos_pedidos/views/Pedidos/lista_solicitados.dart';
 import 'package:processos_pedidos/wdgets/icon_button.dart';
 import 'package:processos_pedidos/wdgets/listaview_produtos.dart';
@@ -11,10 +12,10 @@ class DadosUsuario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _body();
+    return _body(context);
   }
 
-  Widget _body() {
+  Widget _body(context) {
     return ListView(
       children: [
         Column(
@@ -55,9 +56,9 @@ class DadosUsuario extends StatelessWidget {
                     child: FloatingActionButton(
                       onPressed: () {
                         print(0);
-                        //Navigator.push(BuildContext context,
-                        //  MaterialPageRoute(
-                        //   builder: (context) => ListaSolicitados()));
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => ListaSolicitados()),
+                        );
                       },
                       child: Icon(
                         Icons.work_outlined,
@@ -70,10 +71,9 @@ class DadosUsuario extends StatelessWidget {
                     width: 80,
                     child: FloatingActionButton(
                       onPressed: () {
-                        // print(0);
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => ListaSolicitados()));
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => ListaEntregas()),
+                        );
                       },
                       child: Icon(
                         Icons.add_business_sharp,
@@ -86,10 +86,7 @@ class DadosUsuario extends StatelessWidget {
                     width: 80,
                     child: FloatingActionButton(
                       onPressed: () {
-                        // print(0);
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => ListaSolicitados()));
+                         Navigator.push(context, MaterialPageRoute(builder: (context) => ListaEntregues()));
                       },
                       child: Icon(
                         Icons.article_outlined,
