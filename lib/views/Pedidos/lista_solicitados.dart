@@ -37,7 +37,7 @@ class ListaSolicitados extends StatelessWidget {
         primary: true,
         padding: EdgeInsets.only(top: 10, left: 10, right: 10),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 1, mainAxisExtent: 410),
+            crossAxisCount: 1, mainAxisExtent: 390),
         itemCount: produtos.length,
         itemBuilder: (context, index) {
           return _itemView(produtos, index, context);
@@ -112,7 +112,7 @@ class ListaSolicitados extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8),
               child: Divider(
                 height: 2,
                 color: Colors.grey[400],
@@ -132,10 +132,7 @@ class ListaSolicitados extends StatelessWidget {
               ),
               trailing: Text("qtdeX"),
             ),
-            Divider(
-              height: 2,
-              color: Colors.grey[400],
-            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -149,7 +146,7 @@ class ListaSolicitados extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8),
               child: Divider(
                 height: 2,
                 color: Colors.grey[400],
@@ -170,7 +167,7 @@ class ListaSolicitados extends StatelessWidget {
             ),
 
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8),
               child: Divider(
                 height: 2,
                 color: Colors.grey[400],

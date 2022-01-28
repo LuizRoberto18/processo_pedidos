@@ -49,7 +49,7 @@ class _ScaffoldCorpoState extends State<ScaffoldCorpo> {
         flexibleSpace: Padding(
           padding: EdgeInsets.only(left: 10, right: 10),
         ),
-        title: Text("tela selecionada"),
+        title: Text(listTitulo[_indexSelecionado]),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),

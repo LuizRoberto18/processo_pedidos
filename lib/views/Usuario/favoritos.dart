@@ -47,7 +47,7 @@ class _FavoritoState extends State<Favorito> {
         primary: false,
         padding: EdgeInsets.only(top: 5, left: 4, right: 4),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, mainAxisExtent: 314),
+            crossAxisCount: 2, mainAxisExtent: 340),
         itemCount: produtos.length,
         itemBuilder: (context, index) {
           return _itemView(produtos, index);

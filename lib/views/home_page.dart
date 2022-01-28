@@ -65,10 +65,13 @@ class _HomePageState extends State<HomePage> {
                     height: 30,
                   ),
                   TextForm(
+
                     "Senha",
                     "Digite ua Senha",
                     controller: _controlSenha,
                     validator: _validadesSenha,
+                    KeyboardType: TextInputType.text,
+                    password: true,
                   ),
                   SizedBox(
                     height: 30,

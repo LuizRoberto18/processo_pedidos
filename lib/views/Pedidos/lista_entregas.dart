@@ -47,7 +47,7 @@ class _ListaEntregasState extends State<ListaEntregas> {
         primary: true,
         padding: EdgeInsets.only(top: 10, left: 10, right: 10),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 1, mainAxisExtent: 425),
+            crossAxisCount: 1, mainAxisExtent: 440),
         itemCount: produtos.length,
         itemBuilder: (context, index) {
           return _itemView(produtos, index);
@@ -143,10 +143,7 @@ class _ListaEntregasState extends State<ListaEntregas> {
               ),
               trailing: Text("qtdeX"),
             ),
-            Divider(
-              height: 2,
-              color: Colors.grey[400],
-            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -159,24 +156,29 @@ class _ListaEntregasState extends State<ListaEntregas> {
                 ),
               ],
             ),
-            Divider(
-              height: 2,
-              color: Colors.grey[400],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Divider(
+                height: 2,
+                color: Colors.grey[400],
+              ),
             ),
             Container(
               height: 30,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    " Valor Total: $_valorTotal",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.purple[500],
-                      fontSize: 17,
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      " Valor Total: $_valorTotal",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.purple[500],
+                        fontSize: 17,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Padding(
@@ -201,7 +203,7 @@ class _ListaEntregasState extends State<ListaEntregas> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 4.0, ),
+              padding: const EdgeInsets.only(bottom: 4.0 ),
               child: Divider(
                 height: 2,
                 color: Colors.grey[400],

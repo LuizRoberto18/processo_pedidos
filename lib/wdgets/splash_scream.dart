@@ -45,12 +45,12 @@ class _SplashScreamTelaState extends State<SplashScreamTela> {
     );
   }
 
-  void _splash(BuildContext context) {
-    Future.delayed(Duration(seconds: 2)).then((value) {
-      print("fim Splash");
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
-    });
+  void _splash(BuildContext context) async {
+   await Future.delayed(Duration(seconds: 2));
+     print("fim Splash");
+     Navigator.push(
+         context, MaterialPageRoute(builder: (context) => HomePage()));
+
   }
 
   // Widget _introScream() {

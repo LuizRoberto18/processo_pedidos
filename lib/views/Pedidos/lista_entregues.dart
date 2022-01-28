@@ -15,7 +15,8 @@ class ListaEntregues extends StatelessWidget {
           IconButton(
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => _barraPesquisa(context)),
+                MaterialPageRoute(
+                    builder: (context) => _barraPesquisa(context)),
               );
             },
             icon: Icon(Icons.search),
@@ -32,6 +33,21 @@ class ListaEntregues extends StatelessWidget {
           nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
       Produto(
           nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+      Produto(
+          nome: "Fone de Ouvido", img: "images/fone_ouvido.jpg", valor: 302.0),
+
     ];
     return Container(
       color: Colors.grey[400],
@@ -39,7 +55,7 @@ class ListaEntregues extends StatelessWidget {
         primary: true,
         padding: EdgeInsets.only(top: 10, left: 10, right: 10),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 1, mainAxisExtent: 440),
+            crossAxisCount: 1, mainAxisExtent: 340),
         itemCount: produtos.length,
         itemBuilder: (context, index) {
           return _itemView(produtos, index, context);
@@ -48,7 +64,7 @@ class ListaEntregues extends StatelessWidget {
     );
   }
 
-  _itemView(List<Produto> produtos, int index,context) {
+  _itemView(List<Produto> produtos, int index, context) {
     Produto produto = produtos[index];
     double _valorTotal = produto.valor! + produto.valor!;
     return Card(
@@ -66,7 +82,8 @@ class ListaEntregues extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => DetalhesPedido()),
+                        MaterialPageRoute(
+                            builder: (context) => DetalhesPedido()),
                       );
                     },
                     child: Text("Detalhes do produto"),
@@ -114,61 +131,32 @@ class ListaEntregues extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8),
               child: Divider(
                 height: 2,
                 color: Colors.grey[400],
               ),
             ),
-            ListTile(
-              leading: _img("images/fone_ouvido.jpg"),
-              title: Text(
-                "${produto.nome}",
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 22),
-              ),
-              subtitle: Text(
-                "cor/modelo",
-                style: TextStyle(fontSize: 16),
-              ),
-              trailing: Text("qtdeX"),
-            ),
-            Divider(
-              height: 2,
-              color: Colors.grey[400],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  " Valor item: ${produto.valor!}",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.purple[500],
-                  ),
+
+
+
+            Container(
+              height: 30,
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      " Valor Total: ${produto.valor}",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.purple[500],
+                        fontSize: 17,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Divider(
-                height: 2,
-                color: Colors.grey[400],
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  " Valor Total: $_valorTotal",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.purple[500],
-                    fontSize: 17,
-                  ),
-                ),
-              ],
             ),
             Divider(
               height: 2,
