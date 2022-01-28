@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           fillColor: Colors.white,
         ),
       ),
-      home: ScaffoldCorpo(),
+      home: SplashScreamTela(),
     );
   }
 }

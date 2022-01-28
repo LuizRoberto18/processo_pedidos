@@ -11,8 +11,46 @@ class SplashScreamTela extends StatefulWidget {
 
 class _SplashScreamTelaState extends State<SplashScreamTela> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _splash(context);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.black87,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 150,
+              width: 150,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("images/logo_home.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            CircularProgressIndicator(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _splash(BuildContext context) {
+    Future.delayed(Duration(seconds: 2)).then((value) {
+      print("fim Splash");
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+    });
   }
 
   // Widget _introScream() {
@@ -24,7 +62,7 @@ class _SplashScreamTelaState extends State<SplashScreamTela> {
   //           fontWeight: FontWeight.bold,
   //           fontSize: 20.0
   //       ),),
-  //     image: Image.asset("images/logo_home.png"),
+  //
   //     backgroundColor: Colors.black87,
   //     styleTextUnderTheLoader: TextStyle(),
   //     photoSize: 100.0,
